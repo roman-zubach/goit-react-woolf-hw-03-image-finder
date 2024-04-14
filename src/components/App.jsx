@@ -15,10 +15,6 @@ class App extends Component {
     page: 1,
   };
 
-  componentDidMount() {
-    this.getImages();
-  }
-
   componentDidUpdate(prevProps, prevState) {
     const { page, searchValue } = this.state;
 
