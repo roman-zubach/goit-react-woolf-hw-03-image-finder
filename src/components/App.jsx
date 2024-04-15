@@ -35,11 +35,12 @@ class App extends Component {
 
       this.setState((prevState) => ({
         images: [...prevState.images, ...data.hits],
-        isLoading: false,
         maxResults: data.totalHits,
       }));
     } catch (error) {
-      this.setState({ error: error.message, isLoading: false });
+      this.setState({ error: error.message });
+    } finally {
+      this.setState({ isLoading: false });
     }
   };
 
