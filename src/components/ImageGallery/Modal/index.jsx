@@ -14,7 +14,7 @@ class Modal extends Component {
     document.removeEventListener('keydown', this.handleEsc);
   }
 
-  onClick = (event) => {
+  handleClick = (event) => {
     if (event.target === event.currentTarget ) this.props.onClose();
   }
 
@@ -22,7 +22,7 @@ class Modal extends Component {
     const { src, alt } = this.props;
 
     return (
-      <div className="overlay" onClick={this.onClick}>
+      <div className="overlay" onClick={this.handleClick}>
         <div className="modal">
           <img src={src} alt={alt} />
         </div>
