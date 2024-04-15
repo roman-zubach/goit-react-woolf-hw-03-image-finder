@@ -6,7 +6,7 @@ const instance = axios.create({
 });
 
 export const getImageApi = async (query, page) => {
-  const { data } = await instance.get('/api', {
+  const { data } = await instance.get('/api/', {
     params: {
       key: PIXABAY_API_KEY,
       image_type: 'photo',

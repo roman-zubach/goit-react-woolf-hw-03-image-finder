@@ -5,6 +5,7 @@ class Modal extends Component {
   handleEsc = ({ code }) => {
     if (code === 'Escape') this.props.onClose()
   }
+
   componentDidMount() {
     document.addEventListener('keydown', this.handleEsc)
   }
@@ -14,10 +15,10 @@ class Modal extends Component {
   }
 
   render() {
-    const { src, alt } = this.props;
+    const { src, alt, onClose } = this.props;
 
     return (
-      <div className="overlay">
+      <div className="overlay" onClick={onClose}>
         <div className="modal">
           <img src={src} alt={alt} />
         </div>
